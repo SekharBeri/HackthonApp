@@ -14,13 +14,13 @@
 	
 	<div id="search" class="container col-sm-offset-2">
 		<center>
-			<img src="services.jpg"><br><br>
+			<img src="services.jpg">
 		</center><br><br>
 		<form name="searchForm" ng-submit="searchForm.$valid&&Search()" novalidate>
 			<div class="row">
 				<div class="col-sm-3"></div>
 				<div class="col-sm-6">
-					<input type="text" class="form-control" name="category" ng-model="value" uib-typeahead="categories for categories in categorylist| filter:$viewValue" required><br>
+					<input type="text" class="form-control" name="category" ng-model="value" uib-typeahead="categories.id as categories.name for categories in categorylist| filter:$viewValue" required><br>
 				</div>
 				<div class="col-sm-3"></div>
 			</div>

@@ -1,11 +1,11 @@
-angular.module('HackathonApp.controllers').controller('deptCtrl',function($scope){
-	$scope.colors = [
-	{name:'black', shade:'dark'},
-	{name:'white', shade:'light', notAnOption: true},
-	{name:'red', shade:'dark'},
-	{name:'blue', shade:'dark', notAnOption: true},
-	{name:'yellow', shade:'light', notAnOption: false}
-	];
+angular.module('HackathonApp.controllers').controller('deptCtrl',function($scope,$http){
+	
+	$http.get('http://192.168.199.81:3000/categories_list').success(function(data){
+		console.log(data)
+		$scope.depts=data.category;
+	}).error(function(error){
+		console.log(error)
+	})
 
 	$scope.submitDeptData=function(){
 		console.log($scope.myColor)
