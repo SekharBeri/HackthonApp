@@ -2,7 +2,7 @@
 	<br>
 	<div class="col-sm-4"></div>
 	<div class="col-sm-4">
-		<form name="deptsearchForm" ng-submit="deptsearchForm.$valid&&submitDeptData()" novalidate>
+		<form name="deptsearchForm" ng-submit="deptsearchForm.$valid&&createDept()" novalidate>
 			<center>
 				<label>Category</label><select class="btn-primary form-control" ng-model="myDept" ng-options="dept.id as dept.name for dept in depts" selected> <option value="">-- choose Department --</option></select><br>
 				<label>Department</label>

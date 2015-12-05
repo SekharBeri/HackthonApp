@@ -6,7 +6,7 @@ angular.module('HackathonApp.controllers').controller('deptCtrl',function($scope
 		console.log(error)
 	})
 
-	$scope.submitDeptData=function(){
+	$scope.createDept=function(){
 		if($scope.myDept!=undefined||$scope.myDept!=null)
 		{
 			console.log($scope.myDept)
