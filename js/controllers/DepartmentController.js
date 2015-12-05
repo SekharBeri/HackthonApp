@@ -10,6 +10,7 @@ angular.module('HackathonApp.controllers').controller('deptCtrl',function($scope
 		if($scope.myDept!=undefined||$scope.myDept!=null)
 		{
 			console.log($scope.myDept)
+			console.log($scope.service)
 		}
 	}
 

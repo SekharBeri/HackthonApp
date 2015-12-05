@@ -1,6 +1,7 @@
 angular.module('HackathonApp.controllers').controller('userDashCtrl',function($scope,$http,$state){
 
 	$scope.categorylist;
+	$scope.serviceslist;
 
 	$scope.getData=function(){
 		//alert($scope.value);
@@ -16,8 +17,8 @@ angular.module('HackathonApp.controllers').controller('userDashCtrl',function($s
 		}
 
 		$scope.Search=function(){
-			console.log($scope.value)
-			$state.go('User_GetServiceDetails');
+			console.log($scope.value);
+			$state.go('User_GetServiceDetails',{id:$scope.value.id});
 		}
 
 		$scope.Clear=function(){

@@ -12,19 +12,75 @@
 				</div>
 			</div>
 		</nav>
-		
-
-
 
 		<br>
-		<div class="col-sm-4"></div>
-		<div class="col-sm-4">
-			<center>
-				<label>Department</label><select class="btn-primary form-control" ng-model="Department" ng-change="getDetails()" ng-options="color.shade as color.name for color in colors" selected></select><br>
-				
-			</center>
-		</div>
-		<div class="col-sm-4"></div>
+		<div class="col-sm-2"></div>
 
+		<div class="col-sm-2">
+			<form>
+
+				<label>Category</label>
+				<select class="btn-default form-control" ng-model="selectedCategory" ng-change="changed()" ng-options="cat.category_type for cat in categories" selected>
+					<option value="">--Select Category--</option>
+				</select><br>
+
+				<!-- <select class="btn-default form-control">
+					<option value="0">{{selectedCategory}}</option>
+				</select> -->
+
+			</form>
+
+		</div>
+		<div class="col-sm-2">	
+			<label>Term</label><select class="btn-default form-control" ng-model="selectedTerm">
+			<option value="{{selectedTerm}}"></option>
+		</select><br></div>
 	</div>
+	<br>
+	<div class="row">
+		<div class="col-sm-offset-4 col-sm-2"><label>Service Name:</label></div>
+
+		<div class="col-sm-3"><label>{{servicesData.service.name}}</label></div>
+
+		<br><br>
+		<div ng-repeat="services in servicesData.categories">
+
+
+
+			<div class="col-sm-offset-4 col-sm-2"><label>Required Docs:</label></div>
+
+			<div class="col-sm-3"><label>{{services.req_documents}}</label></div>
+			<br>
+			<br>
+
+			<div class="col-sm-offset-4 col-sm-2"><label>Process:</label></div>
+
+			<div class="col-sm-3"><label>{{services.process}}</label></div>
+
+
+			<br>
+			<br>
+			<div class="col-sm-offset-4 col-sm-2"><label>Fee:</label></div>
+
+			<div class="col-sm-3"><label>{{services.fee}}</label></div>
+			<br>
+			<br>
+			<div ng-if="services.contact_info!=null">
+
+				<div class="col-sm-offset-4 col-sm-2"><label>Contact:</label></div>
+
+				<div class="col-sm-3"><label>{{services.contact_info}}</label></div>
+
+			</div>
+			<br>
+			<br>
+
+			<div class="col-sm-offset-4 col-sm-2"><label>Website:</label></div>
+
+			<div class="col-sm-3"><a ng-href="{{services.website}}" target="_blank">{{services.website}}</a></div>
+
+
+		</div>
+	</div>
+
 </div>
