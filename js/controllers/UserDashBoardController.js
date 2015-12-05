@@ -1,7 +1,5 @@
 angular.module('HackathonApp.controllers').controller('userDashCtrl',function($scope,$http,$state){
 
-
-
 	$scope.categorylist;
 
 	$http.get('http://192.168.199.81:3000/categories_list').success(function(data){

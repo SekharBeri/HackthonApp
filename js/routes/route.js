@@ -11,16 +11,17 @@ angular.module('HackathonApp').config(function($stateProvider,$urlRouterProvider
 	})
 	.state('adminAddService',{
 		url:'/admin_add_services',
-		templateUrl:'templates/Admin_AddService.html'
+		templateUrl:'templates/Admin_AddService.html',
+		controller:'adminServiceCtrl'
 	})
-  .state('adminAddService.categories',{
-	  url:'/categories',
-	  templateUrl:'templates/categories.html',
-	  controller: "CategoriesController"
+	.state('adminAddService.categories',{
+		url:'/categories',
+		templateUrl:'templates/categories.html',
+		controller: "CategoriesController"
 	})
 	.state('adminAddService.newCategory',{
-	  url:'/new_category',
-	  templateUrl:'templates/new_category.html'
+		url:'/new_category',
+		templateUrl:'templates/new_category.html'
 	})
 	.state('adminAddService.admin_depart',{
 		url:'/department',

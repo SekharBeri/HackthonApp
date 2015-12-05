@@ -2,13 +2,14 @@
 	<br>
 	<div class="col-sm-4"></div>
 	<div class="col-sm-4">
-		<center>
-			<label>Category</label><select class="btn-primary form-control" ng-model="myColor" ng-options="color.shade as color.name for color in colors" selected></select><br>
-			<label>Service</label>
-			<input type="text" class="form-control" ng-model="service"><br>
-			<button type="submit" class="btn btn-success" ng-click="submitDeptData()">Submit</button>
-		</center>
+		<form name="deptsearchForm" ng-submit="deptsearchForm.$valid&&submitDeptData()" novalidate>
+			<center>
+				<label>Category</label><select class="btn-primary form-control" ng-model="myColor" ng-options="dept.id as dept.name for dept in depts" selected></select><br>
+				<label>Department</label>
+				<input type="text" class="form-control" ng-model="service" required><br>
+				<button type="submit" class="btn btn-success">Create Dept</button>
+			</center>
+		</form>
 	</div>
 	<div class="col-sm-4"></div>
-
 </div>
