@@ -1,7 +1,7 @@
-<div class="panel panel-info">
+<div class="panel panel-info" ng-controller="CategoriesController">
   <div class="panel-heading">New Category</div>
   <div class="panel-body">
-    <form name="categoryFrom">
+    <form name="categoryFrom" ng-submit="createCategory()">
       <div class="row">
         <div class="col-xs-offset-2 col-xs-2">
           <label>Category Name</label>
