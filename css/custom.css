@@ -1,0 +1,18 @@
+.container-margin{
+  padding-top: 150px;
+  margin-left: 500px;
+}
+
+a:hover{
+  color: #337AB7;
+  text-decoration: none;
+  text-decoration-color: -moz-use-text-color;
+  text-decoration-line: none;
+  text-decoration-style: solid;
+  cursor: pointer;
+}
+
+.error{
+  color: red;
+}
+
