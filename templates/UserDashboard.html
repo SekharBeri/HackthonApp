@@ -1,4 +1,4 @@
-<div>
+<div class="row">
 	<nav class="navbar navbar-inverse">
 		<div class="container-fluid">
 			<div class="navbar-header">
@@ -11,5 +11,29 @@
 			</div>
 		</div>
 	</nav>
-	<h1>Hello User Dashboard</h1>
+	
+	<div id="search" class="container col-sm-offset-2">
+		<center>
+			<img src="services.jpg"><br><br>
+		</center><br><br>
+		<form name="searchForm" ng-submit="searchForm.$valid&&Search()" novalidate>
+			<div class="row">
+				<div class="col-sm-3"></div>
+				<div class="col-sm-6">
+					<input type="text" class="form-control" name="category" ng-model="value" uib-typeahead="categories for categories in categorylist| filter:$viewValue" required><br>
+				</div>
+				<div class="col-sm-3"></div>
+			</div>
+			<div class="row">
+				<div class="col-sm-offset-3 col-sm-3">
+					<button type="submit" class="btn btn-success btn-block">Search</button>
+				</div>
+
+				<div class="col-sm-3">
+					<button class="btn btn-warning btn-block" ng-click="Clear()">Clear</button>
+				</div>
+			</div>
+		</form>
+	</div>
+
 </div>
