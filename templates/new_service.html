@@ -1,7 +1,7 @@
 <div class="panel panel-info" ng-controller="CategoriesController">
   <div class="panel-heading">New Category</div>
   <div class="panel-body">
-    <form class="form-horizontal">
+    <form class="form-horizontal" name="serviceForm" novalidate>
       <fieldset>
 
         <!-- Form Name -->
@@ -11,7 +11,7 @@
         <div class="form-group">
           <label class="col-md-4 control-label" for="selectbasic">Category</label>
           <div class="col-md-4">
-            <select id="selectbasic" name="selectbasic" class="form-control">
+            <select id="selectbasic" name="selectbasic" ng-model="newservice.category" class="form-control">
               <option value="1">Option one</option>
               <option value="2">Option two</option>
             </select>
@@ -22,7 +22,7 @@
         <div class="form-group">
           <label class="col-md-4 control-label" for="selectbasic">State</label>
           <div class="col-md-4">
-            <select id="selectbasic" name="selectbasic" class="form-control">
+            <select id="selectbasic" name="selectbasic" ng-model="newservice.state" class="form-control">
               <option value="1">Option one</option>
               <option value="2">Option two</option>
             </select>
@@ -33,9 +33,8 @@
         <div class="form-group">
           <label class="col-md-4 control-label" for="selectbasic">District</label>
           <div class="col-md-4">
-            <select id="selectbasic" name="selectbasic" class="form-control">
-              <option value="1">Option one</option>
-              <option value="2">Option two</option>
+            <select id="selectbasic" name="selectbasic" ng-model="newservice.dist" class="form-control">
+              <option value="">--choose district--</option>
             </select>
           </div>
         </div>
@@ -44,7 +43,7 @@
         <div class="form-group">
           <label class="col-md-4 control-label" for="selectbasic">Department</label>
           <div class="col-md-4">
-            <select id="selectbasic" name="selectbasic" class="form-control">
+            <select id="selectbasic" name="selectbasic" ng-model="newservice.dept" class="form-control">
               <option value="1">Option one</option>
               <option value="2">Option two</option>
             </select>
@@ -55,7 +54,7 @@
         <div class="form-group">
           <label class="col-md-4 control-label" for="textinput">Service</label>  
           <div class="col-md-4">
-            <input id="textinput" name="textinput" type="text" placeholder="placeholder" class="form-control input-md">
+            <input id="textinput" name="textinput" type="text" placeholder="placeholder" ng-model="newservice.service" class="form-control input-md">
             <span class="help-block">help</span>  
           </div>
         </div>
@@ -64,7 +63,7 @@
         <div class="form-group">
           <label class="col-md-4 control-label" for="textarea">Process</label>
           <div class="col-md-4">                     
-            <textarea class="form-control" id="textarea" name="textarea">default text</textarea>
+            <textarea class="form-control" id="textarea" name="textarea" ng-model="newservice.process">default text</textarea>
           </div>
         </div>
 
@@ -72,7 +71,7 @@
         <div class="form-group">
           <label class="col-md-4 control-label" for="textarea">Requirements</label>
           <div class="col-md-4">                     
-            <textarea class="form-control" id="textarea" name="textarea">default text</textarea>
+            <textarea class="form-control" id="textarea" name="textarea" ng-model="newservice.requirements">default text</textarea>
           </div>
         </div>
 
