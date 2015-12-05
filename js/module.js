@@ -1,3 +1,3 @@
-angular.module('forumApp', ['forumApp.controllers', 'ngRoute', 'ngMessages']);
-angular.module('forumApp.controllers', ['forumApp.services']);
-angular.module('forumApp.services', ['ngResource']);
+angular.module('HackathonApp', ['HackathonApp.controllers', 'ngRoute', 'ngMessages']);
+angular.module('HackathonApp.controllers', ['HackathonApp.services']);
+angular.module('HackathonApp.services', ['ngResource']);
