@@ -1,20 +1,92 @@
 <div class="panel panel-info" ng-controller="CategoriesController">
   <div class="panel-heading">New Category</div>
   <div class="panel-body">
-    <form name="categoryFrom" ng-submit="createService()">
-      <div class="row">
-        <div class="col-xs-offset-2 col-xs-2">
-          <label>Category Name</label>
+    <form class="form-horizontal">
+      <fieldset>
+
+        <!-- Form Name -->
+        <legend>Form Name</legend>
+
+        <!-- Select Basic -->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="selectbasic">Category</label>
+          <div class="col-md-4">
+            <select id="selectbasic" name="selectbasic" class="form-control">
+              <option value="1">Option one</option>
+              <option value="2">Option two</option>
+            </select>
+          </div>
         </div>
-        <div class="col-xs-3">
-          <input type="text" name="categoryName" class="form-control" ng-model="categoryName">
+
+        <!-- Select Basic -->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="selectbasic">State</label>
+          <div class="col-md-4">
+            <select id="selectbasic" name="selectbasic" class="form-control">
+              <option value="1">Option one</option>
+              <option value="2">Option two</option>
+            </select>
+          </div>
         </div>
-      </div><br>
-      <div class="row">
-        <div class="col-xs-offset-6 col-xs-2">
-          <button name="Save" class="btn btn-primary">Create</button>
+
+        <!-- Select Basic -->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="selectbasic">District</label>
+          <div class="col-md-4">
+            <select id="selectbasic" name="selectbasic" class="form-control">
+              <option value="1">Option one</option>
+              <option value="2">Option two</option>
+            </select>
+          </div>
         </div>
-      </div>
+
+        <!-- Select Basic -->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="selectbasic">Department</label>
+          <div class="col-md-4">
+            <select id="selectbasic" name="selectbasic" class="form-control">
+              <option value="1">Option one</option>
+              <option value="2">Option two</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Text input-->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="textinput">Service</label>  
+          <div class="col-md-4">
+            <input id="textinput" name="textinput" type="text" placeholder="placeholder" class="form-control input-md">
+            <span class="help-block">help</span>  
+          </div>
+        </div>
+
+        <!-- Textarea -->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="textarea">Process</label>
+          <div class="col-md-4">                     
+            <textarea class="form-control" id="textarea" name="textarea">default text</textarea>
+          </div>
+        </div>
+
+        <!-- Textarea -->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="textarea">Requirements</label>
+          <div class="col-md-4">                     
+            <textarea class="form-control" id="textarea" name="textarea">default text</textarea>
+          </div>
+        </div>
+
+        <!-- Button (Double) -->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="button1id"></label>
+          <div class="col-md-8">
+            <button id="button1id" name="button1id" class="btn btn-success">Create</button>
+            <button id="button2id" name="button2id" class="btn btn-danger">Reset</button>
+          </div>
+        </div>
+
+      </fieldset>
     </form>
+
   </div>
 </div>
