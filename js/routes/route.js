@@ -2,7 +2,8 @@ angular.module('HackathonApp').config(function($stateProvider,$urlRouterProvider
 	$stateProvider
 	.state('startPage',{
 		url:'/user_dash',
-		templateUrl:'templates/UserDashboard.html'
+		templateUrl:'templates/UserDashboard.html',
+		controller:'userDashCtrl'
 	})
 	.state('adminLogin',{
 		url:'/admin_login',
@@ -11,6 +12,16 @@ angular.module('HackathonApp').config(function($stateProvider,$urlRouterProvider
 	.state('adminAddService',{
 		url:'/admin_add_services',
 		templateUrl:'templates/Admin_AddService.html'
+	})
+	.state('adminAddService.admin_depart',{
+		url:'/department',
+		templateUrl:'templates/Department.html',
+		controller:'deptCtrl'
+	})
+	.state('User_GetServiceDetails',{
+		url:'/user_serviceview',
+		templateUrl:'templates/User_ServiceDetails.html'
+
 	})
 
 	$urlRouterProvider.otherwise('/user_dash');

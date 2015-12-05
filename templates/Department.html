@@ -1,0 +1,14 @@
+<div class="row">
+	<br>
+	<div class="col-sm-4"></div>
+	<div class="col-sm-4">
+		<center>
+			<label>Category</label><select class="btn-primary form-control" ng-model="myColor" ng-options="color.shade as color.name for color in colors" selected></select><br>
+			<label>Service</label>
+			<input type="text" class="form-control" ng-model="service"><br>
+			<button type="submit" class="btn btn-success" ng-click="submitDeptData()">Submit</button>
+		</center>
+	</div>
+	<div class="col-sm-4"></div>
+
+</div>
