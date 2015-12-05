@@ -23,3 +23,7 @@ a:hover{
 #imagealign{
 	margin-left:350px;
 }
+
+textarea.form-control {
+    height: 126px;
+}
