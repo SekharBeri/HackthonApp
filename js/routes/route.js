@@ -31,9 +31,15 @@ angular.module('HackathonApp').config(function($stateProvider,$urlRouterProvider
 	.state('User_GetServiceDetails',{
 		url:'/user_serviceview',
 		templateUrl:'templates/User_ServiceDetails.html'
-
 	})
-
+	.state('adminAddService.admin_services',{
+		url:'/services',
+		templateUrl:'templates/admin_service_details.html'
+	})
+  .state('adminAddService.newService',{
+		url:'/new_service',
+		templateUrl:'templates/new_service.html'
+	})
 	$urlRouterProvider.otherwise('/user_dash');
 
 
