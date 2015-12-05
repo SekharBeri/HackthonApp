@@ -12,6 +12,16 @@ angular.module('HackathonApp').config(function($stateProvider,$urlRouterProvider
 		url:'/admin_add_services',
 		templateUrl:'templates/Admin_AddService.html'
 	})
+  .state('adminAddService.categories',{
+	  url:'/categories',
+	  templateUrl:'templates/categories.html',
+	  controller: "CategoriesController"
+	})
+	.state('adminAddService.newCategory',{
+	  url:'/new_category',
+	  templateUrl:'templates/new_category.html'
+	})
+
 
 	$urlRouterProvider.otherwise('/user_dash');
 
