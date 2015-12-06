@@ -1,7 +1,7 @@
-<div class="panel panel-info" ng-controller="ServiceController">
+<div class="panel panel-info">
   <div class="panel-heading">New Category</div>
   <div class="panel-body">
-    <form class="form-horizontal">
+    <form class="form-horizontal" name="newServiceForm"  ng-submit="newServiceForm.$valid&&saveService()" novalidate>
       <fieldset>
 
         <!-- Form Name -->
@@ -11,17 +11,17 @@
         <div class="form-group">
           <label class="col-md-4 control-label" for="selectbasic">Category</label>
           <div class="col-md-5">
-            <select id="selectbasic" name="selectbasic" class="form-control" ng-options="category.id as category.name for category in categories">
-              <option value="1">--select category--</option>
+            <select id="selectbasic" name="selectbasic" class="form-control" ng-model="newservice.category" ng-options="category as category.name for category in categories" required>
+              <option value="">--select category--</option>
             </select>
           </div>
         </div>
 
         <!-- Select Basic -->
-        <div class="form-group">
+        <div class="form-group" ng-if="newservice.category.name!='CENTER'">
           <label class="col-md-4 control-label" for="selectbasic">State</label>
           <div class="col-md-5">
-            <select id="selectbasic" name="selectbasic" class="form-control">
+            <select id="selectbasic" name="selectbasic" ng-model="newservice.state" class="form-control" required>
               <option value="0">--select ca--</option>
               <option value="2">Option two</option>
             </select>
@@ -29,10 +29,10 @@
         </div>
 
         <!-- Select Basic -->
-        <div class="form-group">
+        <div class="form-group"  ng-if="newservice.category.name!='CENTER'">
           <label class="col-md-4 control-label" for="selectbasic">District</label>
           <div class="col-md-5">
-            <select id="selectbasic" name="selectbasic" class="form-control">
+            <select id="selectbasic" name="selectbasic" ng-model="newservice.district" class="form-control" required>
               <option value="1">Option one</option>
               <option value="2">Option two</option>
             </select>
@@ -43,7 +43,7 @@
         <div class="form-group">
           <label class="col-md-4 control-label" for="selectbasic">Department</label>
           <div class="col-md-5">
-            <select id="selectbasic" name="selectbasic" class="form-control">
+            <select id="selectbasic" name="selectbasic" ng-model="newservice.dept" class="form-control">
               <option value="1">Option one</option>
               <option value="2">Option two</option>
             </select>
@@ -54,8 +54,7 @@
         <div class="form-group">
           <label class="col-md-4 control-label" for="textinput">Service</label>  
           <div class="col-md-5">
-            <input id="textinput" name="textinput" type="text" placeholder="Please Enter Service Name" class="form-control input-md">
-            <span class="help-block">help</span>  
+            <input id="textinput" name="textinput" type="text" ng-model="newservice.service" placeholder="Please Enter Service Name" class="form-control input-md" required>
           </div>
         </div>
 
@@ -63,7 +62,7 @@
         <div class="form-group">
           <label class="col-md-4 control-label" for="textarea">Process</label>
           <div class="col-md-5">                     
-            <textarea class="form-control" id="textarea" name="textarea" placeholder="Process" height="126px"></textarea>
+            <textarea class="form-control" id="textarea" name="textarea" ng-model="newservice.process"  placeholder="Process" height="126px" required></textarea>
           </div>
         </div>
 
@@ -71,22 +70,21 @@
         <div class="form-group">
           <label class="col-md-4 control-label" for="textarea">Requirements</label>
           <div class="col-md-5">                     
-            <textarea class="form-control" id="textarea" name="textarea" placeholder="required documents"></textarea>
+            <textarea class="form-control" id="textarea" name="textarea" ng-model="newservice.requirement" placeholder="required documents" required></textarea>
           </div>
         </div>
         
         <div class="form-group">
           <label class="col-md-4 control-label" for="textarea">Contact Info</label>
           <div class="col-md-5">                     
-            <textarea class="form-control" id="textarea" name="textarea" placeholder="Enter Contact Info"></textarea>
+            <textarea class="form-control" id="textarea" name="textarea" ng-model="newservice.contact_info" placeholder="Enter Contact Info" required></textarea>
           </div>
         </div>
         
         <div class="form-group">
           <label class="col-md-4 control-label" for="textinput">External Link</label>  
           <div class="col-md-5">
-            <input id="textinput" name="textinput" type="text" placeholder="External Link" class="form-control input-md">
-            <span class="help-block">help</span>  
+            <input id="textinput" name="textinput" type="text" placeholder="External Link" ng-model="newservice.link" class="form-control input-md" required>
           </div>
         </div>
 
@@ -94,8 +92,8 @@
         <div class="form-group">
           <label class="col-md-4 control-label" for="button1id"></label>
           <div class="col-md-8">
-            <button id="button1id" name="button1id" class="btn btn-success">Create</button>
-            <button id="button2id" name="button2id" class="btn btn-danger">Reset</button>
+            <button id="button1id" type="submit"  class="btn btn-success">Create</button>
+            <button id="button2id"  class="btn btn-danger">Reset</button>
           </div>
         </div>
 
