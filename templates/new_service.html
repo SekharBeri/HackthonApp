@@ -1,5 +1,5 @@
 <div class="panel panel-info">
-  <div class="panel-heading">New Category{{newServiceForm.$valid}}</div>
+  <div class="panel-heading">New Category</div>
   <div class="panel-body">
     <form class="form-horizontal" name="newServiceForm"  ng-submit="newServiceForm.$valid&&saveService()" novalidate>
       <fieldset>
@@ -18,7 +18,7 @@
         </div>
 
         <!-- Select Basic -->
-        <div class="form-group" ng-if="newservice.category.name!='city'">
+        <div class="form-group" ng-if="newservice.category.name!='CENTER'">
           <label class="col-md-4 control-label" for="selectbasic">State</label>
           <div class="col-md-5">
             <select id="selectbasic" name="selectbasic" ng-model="newservice.state" class="form-control" required>
@@ -29,7 +29,7 @@
         </div>
 
         <!-- Select Basic -->
-        <div class="form-group"  ng-if="newservice.category.name!='city'">
+        <div class="form-group"  ng-if="newservice.category.name!='CENTER'">
           <label class="col-md-4 control-label" for="selectbasic">District</label>
           <div class="col-md-5">
             <select id="selectbasic" name="selectbasic" ng-model="newservice.district" class="form-control" required>

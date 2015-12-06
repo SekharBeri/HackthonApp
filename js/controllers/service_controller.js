@@ -4,7 +4,7 @@ angular.module('HackathonApp.controllers')
   $scope.newservice={};
 
   $http({method: 'GET',
-    url: "http://192.168.199.81:3000/categories_list"
+    url: "http://192.168.199.156:3000/categories_list"
   }).success(function(data){
     console.log(data)
     $scope.categories =  data.category;
@@ -15,7 +15,7 @@ angular.module('HackathonApp.controllers')
 
   $scope.saveService=function(){
     console.log($scope.newservice)
-    console.log($scope.newservice)
   }
+
 
 }]);

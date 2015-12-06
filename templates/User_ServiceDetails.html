@@ -14,71 +14,52 @@
 		</nav>
 
 		<br>
-		<div class="col-sm-2"></div>
+		<div class="col-sm-1"></div>
 
-		<div class="col-sm-2">
-			<form>
-
-				<label>Category</label>
-				<select class="btn-default form-control" ng-model="selectedCategory" ng-change="changed()" ng-options="cat.category_type for cat in categories" selected>
-					<option value="">--Select Category--</option>
-				</select><br>
-
-				<!-- <select class="btn-default form-control">
-					<option value="0">{{selectedCategory}}</option>
-				</select> -->
-
-			</form>
-
+		<div class="col-sm-2" ng-if="service_type!='STATE'&&service_type!='DISTRICT'||service_type=='PLACE'">	
+			<label>Place</label>
+			<select class="btn-default form-control" ng-model="selectedPlace.data"  ng-options="place.id as place.name for place in places">
+				<option value="">--Select State--</option>
+			</select><br>
 		</div>
-		<div class="col-sm-2">	
-			<label>Term</label><select class="btn-default form-control" ng-model="selectedTerm">
-			<option value="{{selectedTerm}}"></option>
-		</select><br></div>
+		<div class="col-sm-2" ng-if="service_type=='STATE'||service_type=='DISTRICT'||service_type=='PLACE'">	
+			<label>State</label>
+			<select class="btn-default form-control" ng-model="selectedState.data"  ng-options="state.id as state.name for state in states">
+				<option value="">--Select State--</option>
+			</select><br>
+		</div>
+		<div class="col-sm-2" ng-if="service_type!='STATE'||service_type=='DISTRICT'||service_type=='PLACE'">	
+			<label>District</label>
+			<select class="btn-default form-control" ng-model="selectedDist.data"  ng-options="dist.id as dist.name for dist in districts_data">
+				<option value="">--Select District--</option>
+			</select><br>
+		</div>
+		<br>
+		<div class="col-sm-2" > 
+			<button class="btn btn-default" ng-click="search()">search</button>
+		</div>
 	</div>
-	<br>
-	<div class="row">
+
+	<div class="row" style="margin-top:150px;">
+
 		<div class="col-sm-offset-4 col-sm-2"><label>Service Name:</label></div>
 
-		<div class="col-sm-3"><label>{{servicesData.service.name}}</label></div>
+		<div class="col-sm-3"><label>{{serviceData.service.name}}</label></div>
 
-		<br><br>
-		<div ng-repeat="services in servicesData.categories">
-
-
-
-			<div class="col-sm-offset-4 col-sm-2"><label>Required Docs:</label></div>
-
-			<div class="col-sm-3"><label>{{services.req_documents}}</label></div>
-			<br>
-			<br>
-
-			<div class="col-sm-offset-4 col-sm-2"><label>Process:</label></div>
-
-			<div class="col-sm-3"><label>{{services.process}}</label></div>
+		<br><br><br>
+		<div ng-repeat="services in serviceData.categories">
 
 
-			<br>
-			<br>
-			<div class="col-sm-offset-4 col-sm-2"><label>Fee:</label></div>
 
-			<div class="col-sm-3"><label>{{services.fee}}</label></div>
-			<br>
-			<br>
-			<div ng-if="services.contact_info!=null">
+			<div class="col-sm-offset-1 col-sm-2"><label>Website:</label></div>
 
-				<div class="col-sm-offset-4 col-sm-2"><label>Contact:</label></div>
+			<div class="col-sm-2"><a ng-href="{{services.link}}" target="_blank">{{services.link}}</a></div>
 
-				<div class="col-sm-3"><label>{{services.contact_info}}</label></div>
 
-			</div>
-			<br>
-			<br>
+			<div class="col-sm-offset-1 col-sm-2"><label>Category Name:</label></div>
 
-			<div class="col-sm-offset-4 col-sm-2"><label>Website:</label></div>
-
-			<div class="col-sm-3"><a ng-href="{{services.website}}" target="_blank">{{services.website}}</a></div>
-
+			<div class="col-sm-2"><label>{{services.name}}</label></div>
+			<div class="col-sm-2"><button class="label label-primary" ng-click="open(services.link)">Show Details</button></div>
 
 		</div>
 	</div>

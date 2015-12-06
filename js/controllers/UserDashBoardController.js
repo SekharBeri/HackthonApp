@@ -7,7 +7,7 @@ angular.module('HackathonApp.controllers').controller('userDashCtrl',function($s
 		//alert($scope.value);
 		var obj ={term:$scope.value}
 		$http({method: 'GET', 
-			url: 'http://192.168.199.81:3000/search_services',
+			url: 'http://192.168.199.156:3000/search_services',
 			params: obj}).success(function(data){
 				//console.log(data[0].label)
 				$scope.categorylist=data;
